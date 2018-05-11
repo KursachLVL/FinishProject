@@ -1,26 +1,31 @@
-﻿@*<html>
+﻿<html>
     <body>
             <div style="font-size:80px; text-align:center ">
                 @Html.ActionLink("Мероприятия для тебя!", "All", "Home", new { @style = "color:white;" })
             </div>
-            <video autoplay="autoplay" style="position: fixed;right: 0;bottom: 0;min-width: 100%;min-height: 100%;width: auto;height: auto;z-index: -9999;" loop="loop">
+            <video autoplay muted loop style="position: fixed;right: 0;bottom: 0;min-width: 100%;min-height: 100%;width: auto;height: auto;z-index: -9999;">
                 <source src="~/uploads/rowpost-com.mp4" type="video/mp4" />
                 <source src="~/uploads/rowpost-com.webm" type="video/webm" />
             </video>
     </body>
-    </html>*@
-@section Index{
-    <div class="homepage-hero-module">
-        <div class="video-container">
-            <div class="filter"></div>
-            <video autoplay loop muted class="fillWidth">
-                <source src="~/uploads/rowpost-com.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-                <source src="~/uploads/rowpost-com.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            </video>
+    </html>
+@*@section Index{
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+    <div class="video-v">
+        <div style="font-size:80px; text-align:center ">
+            @Html.ActionLink("Мероприятия для тебя!", "All", "Home", new { @style = "color:white;" })
+        </div>
+        <video autoplay loop muted class="fillWidth">
+            <source src="~/uploads/rowpost-com.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="~/uploads/rowpost-com.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
         </div>
     </div>
+</div>
 }
 @section scripts{
     <script type="text/javascript" src="~/Scripts/JavaScript.js"></script>
-}
+}*@
 
