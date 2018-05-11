@@ -1,0 +1,21 @@
+﻿@model CourseProject_SecondCourse_.Models.EventListViewModel
+
+@{
+    ViewBag.Title = "Фильтрация";
+}
+<form method="get">
+    <div class="form-inline">
+        @Html.DropDownList("category", Model.Categories as SelectList,
+                 htmlAttributes: new { @class = "form-control" })
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
+<div>
+    @foreach (var item in Model.Events)
+    {
+       
+                <a href="/Event/EventPage/@item.Id">@item.Name</a>
+                <br />
+  
+    }
+</div>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<CourseProject_SecondCourse_.Models.Event>
+@{
+
+}
+<h5>Избранные</h5>
+
+
+
+@foreach (var item in Model)
+{
+
+        <a href="/Event/EventPage/@item.Id">@item.Name</a> 
+
+        @Html.ActionLink(" Delete", "DeleteFavorite", new { id = item.Id })
+        <br />
+    
+
+}

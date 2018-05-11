@@ -1,0 +1,16 @@
+﻿@model IEnumerable<CourseProject_SecondCourse_.Models.Event>
+
+
+   
+<div>
+    <h5>Мои события </h5>
+    @foreach (var item in Model)
+    {
+        <a href="/Event/EventPage/@item.Id">@item.Name</a>
+         @Html.ActionLink("Edit  ", "Edit", new { id = item.Id })
+        
+         @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    <br />
+
+    }
+</div>
