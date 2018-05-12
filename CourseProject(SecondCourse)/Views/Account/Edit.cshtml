@@ -1,44 +1,48 @@
 ﻿@model CourseProject_SecondCourse_.Models.EditModel
+    <body style="background-image:url(../../Images/oboik.ru_50639.jpg)">
+<div >
+    <h2>Редактировать данные профиля</h2>
 
-<h2>Редактировать данные профиля</h2>
-
-@using (Html.BeginForm("Edit","Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Edit", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
 
     <div>
         @Html.ValidationSummary(true, "")
-        <div>
-            <p>Year: @Html.EditorFor(model => model.Age)</p>
+        <div style=" font-size:27px; color :aliceblue">
+            <p>Возраст: <p>@Html.EditorFor(model => model.Age)</p></p>
         </div>
-        <div>
-            <p>Surname: @Html.EditorFor(model => model.Surname)</p>
+        <div style="font-size:27px;color:aliceblue">
+            <p>Имя: <p>@Html.EditorFor(model => model.Name)</p></p>
         </div>
-        <div>
-            <p>Name: @Html.EditorFor(model => model.Name)</p>
+        <div style="font-size:27px;color:aliceblue">
+            <p>Фамилия: <p>@Html.EditorFor(model => model.Surname)</p></p>
         </div>
-        <div>
-            <p>PhoneNumber: @Html.EditorFor(model => model.PhoneNumber)</p>
+
+        <div style="font-size:27px;color:aliceblue">
+            <p>Номер: <p>@Html.EditorFor(model => model.PhoneNumber)</p></p>
         </div>
-        <div>
-            <div class="form-group">
-                @Html.Label("Image", new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="Image" name="uploadImage" />
+
+        <div style="font-size:27px;color:aliceblue">
+            <div @*class="form-group"*@>
+                @*@Html.Label("Изменить фотографию профиля", new { @class = "control-label col-md-2" })*@
+                <div @*class="col-md-10"*@>
+                    <p>Изменить фотографию профиля:</p>
+                    <input style="font-size:16px" type="file" id="Image" name="uploadImage" />                
                 </div>
             </div>
-            @*<fieldset>
-            <div class="editor-label">Файл изображения</div>
-            <div class="editor-field">
-                <input type="file" name="uploadImage" />
-            </div>
-        </fieldset>*@
         </div>
         <div>
+            <br />
             <div>
-                <input type="submit" value="Сохранить" />
+                <input style="font-size:27px" type="submit" value="Сохранить" />
             </div>
         </div>
+        <br />
+        <div style="font-size:27px">
         @Html.ActionLink("Изменить пароль", "ChangePassword", "Manage")
+            </div>
     </div>
-}
+    }
+</div>
+        </body>

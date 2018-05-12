@@ -2,40 +2,45 @@
 @{
     ViewBag.Title = "Мой аккаунт";
 }
-
-
-<table class="table">
+<body style="background-image:url(../../Images/oboik.ru_50639.jpg)">
+    <table class="table">
         <tr>
             <td>
-                @Html.Raw("<img style='width:80px; height:60px;' src=\"data:image/jpeg;base64,"
-                                          + Convert.ToBase64String(Model.Image) + "\" />")
+                @Html.Raw("<img style='width:250px; height:200px;' src=\"data:image/jpeg;base64,"
+                                                                    + Convert.ToBase64String(Model.Image) + "\" />")
             </td>
             <td>
-                @Model.Name
-            </td>
-
-            <td>
-                @Model.Surname
+                <h1 style="color:aliceblue">Имя: @Model.Name</h1>
+                <p>
+                    <h1 style="color:aliceblue">Фамилия: @Model.Surname</h1>
+                </p>
+                <p>
+                    <h1 style="color:aliceblue">E-mail: @Model.Email</h1>
+                </p>
             </td>
         </tr>
-    
-</table>
-<div id="myevents">
-    @Ajax.ActionLink("Мои события", "MyEvents", "Event", new AjaxOptions { UpdateTargetId = "myevents" })
 
-</div>
-<div id="myfavorites">
-    @Ajax.ActionLink("Избранные", "MyFavorites", "Event", new AjaxOptions { UpdateTargetId = "myfavorites" })
+    </table>
+    <br />
+    <div id="myfavorites" style="font-size:36px">
+        @Ajax.ActionLink("Избранные", "MyFavorites", "Event", new AjaxOptions { UpdateTargetId = "myfavorites" })
+    </div>
+    <div id="myevents" style="font-size:36px">
 
-</div>
-@Scripts.Render("~/scripts/jquery-1.10.2.min.js")
-@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
+        @Ajax.ActionLink("Мои события", "MyEvents", "Event", new AjaxOptions { UpdateTargetId = "myevents" })
 
-<br />
-<br />
-@Html.ActionLink("Изменить параметры учетной записи", "Edit", "Account")
-@Html.ActionLink("Создать мероприятия", "Create", "Event")
 
+    </div>
+
+    <div style="font-size:36px">
+
+        @Html.ActionLink("Создать мероприятия", "Create", "Event")
+        <p> @Html.ActionLink("Изменить параметры учетной записи", "Edit", "Account")</p>
+    </div>
+    @Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
+
+</body>
 
 
 
